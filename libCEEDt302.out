@@ -1,0 +1,727 @@
+Prove Run for t302
+Clean
+rm -f -r build lib
+make -C examples clean NEK5K_DIR=""
+make[1]: Entering directory `/home/jeth8984/libCEED/examples'
+make -C ceed clean
+make[2]: Entering directory `/home/jeth8984/libCEED/examples/ceed'
+rm -f *~ ex1 ex2
+rm -rf *.dSYM *.TVD.*breakpoints
+make[2]: Leaving directory `/home/jeth8984/libCEED/examples/ceed'
+make -C mfem clean
+make[2]: Entering directory `/home/jeth8984/libCEED/examples/mfem'
+rm -f *~ bp1 bp3
+rm -rf *.dSYM *.TVD.*breakpoints
+make[2]: Leaving directory `/home/jeth8984/libCEED/examples/mfem'
+make -C nek clean
+make[2]: Entering directory `/home/jeth8984/libCEED/examples/nek'
+NEK5K_DIR= && ./nek-examples.sh -clean
+./nek-examples.sh: line 40: cd: ../../../Nek5000: No such file or directory
+./nek-examples.sh: line 41: cd: /home/jeth8984/libCEED/examples/nek/bin: No such file or directory
+Cleaning ...
+make[2]: Leaving directory `/home/jeth8984/libCEED/examples/nek'
+make -C petsc clean
+make[2]: Entering directory `/home/jeth8984/libCEED/examples/petsc'
+rm -f bps bpsdmplex
+make[2]: Leaving directory `/home/jeth8984/libCEED/examples/petsc'
+make -C navier-stokes clean
+make[2]: Entering directory `/home/jeth8984/libCEED/examples/navier-stokes'
+rm -f navierstokes *.vtr *.vts *.bin*
+make[2]: Leaving directory `/home/jeth8984/libCEED/examples/navier-stokes'
+make[1]: Leaving directory `/home/jeth8984/libCEED/examples'
+rm -f backends/magma/ceed-magma_tmp.c backends/magma/ceed-magma_cuda.cu backends/magma/*~ backends/magma/*.o
+rm -f benchmarks/*output.txt
+Make
+make: 'lib' with optional backends: /cpu/self/xsmm/serial /cpu/self/xsmm/blocked
+          CC build/interface/ceed-fortran.o
+          CC build/interface/ceed-basis.o
+          CC build/interface/ceed-elemrestriction.o
+          CC build/interface/ceed-operator.o
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+/home/jeth8984/libCEED/interface/ceed-fortran.c(111): warning #188: enumerated type mixed with another type
+    *err = CeedVectorSetArray(CeedVector_dict[*vec], *memtype, *copymode,
+                                                     ^
+
+/home/jeth8984/libCEED/interface/ceed-fortran.c(111): warning #188: enumerated type mixed with another type
+    *err = CeedVectorSetArray(CeedVector_dict[*vec], *memtype, *copymode,
+                                                               ^
+
+/home/jeth8984/libCEED/interface/ceed-fortran.c(117): warning #188: enumerated type mixed with another type
+    *err = CeedVectorSyncArray(CeedVector_dict[*vec], *memtype);
+                                                      ^
+
+/home/jeth8984/libCEED/interface/ceed-fortran.c(131): warning #188: enumerated type mixed with another type
+    *err = CeedVectorGetArray(vec_, *memtype, &b);
+                                    ^
+
+/home/jeth8984/libCEED/interface/ceed-fortran.c(141): warning #188: enumerated type mixed with another type
+    *err = CeedVectorGetArrayRead(vec_, *memtype, &b);
+                                        ^
+
+/home/jeth8984/libCEED/interface/ceed-fortran.c(201): warning #188: enumerated type mixed with another type
+                                     *nnodes, *ncomp, *memtype, *copymode,
+                                                      ^
+
+/home/jeth8984/libCEED/interface/ceed-fortran.c(201): warning #188: enumerated type mixed with another type
+                                     *nnodes, *ncomp, *memtype, *copymode,
+                                                                ^
+
+/home/jeth8984/libCEED/interface/ceed-fortran.c(247): warning #188: enumerated type mixed with another type
+                                            *blocksize, *nnodes, *ncomp, *mtype,
+                                                                         ^
+
+/home/jeth8984/libCEED/interface/ceed-fortran.c(248): warning #188: enumerated type mixed with another type
+                                            *cmode, blkindices, elemrestriction_);
+                                            ^
+
+/home/jeth8984/libCEED/interface/ceed-fortran.c(280): warning #188: enumerated type mixed with another type
+    *err = CeedElemRestrictionApply(CeedElemRestriction_dict[*elemr], *tmode,
+                                                                      ^
+
+/home/jeth8984/libCEED/interface/ceed-fortran.c(281): warning #188: enumerated type mixed with another type
+                                    *lmode, CeedVector_dict[*uvec],
+                                    ^
+
+/home/jeth8984/libCEED/interface/ceed-fortran.c(313): warning #188: enumerated type mixed with another type
+                                         *tmode, *lmode, CeedVector_dict[*uvec],
+                                         ^
+
+/home/jeth8984/libCEED/interface/ceed-fortran.c(313): warning #188: enumerated type mixed with another type
+                                         *tmode, *lmode, CeedVector_dict[*uvec],
+                                                 ^
+
+/home/jeth8984/libCEED/interface/ceed-fortran.c(376): warning #188: enumerated type mixed with another type
+                                           *quadmode,
+                                           ^
+
+/home/jeth8984/libCEED/interface/ceed-fortran.c(419): warning #188: enumerated type mixed with another type
+    *err = CeedBasisCreateH1(Ceed_dict[*ceed], *topo, *ncomp, *nnodes, *nqpts,
+                                               ^
+
+/home/jeth8984/libCEED/interface/ceed-fortran.c(467): warning #188: enumerated type mixed with another type
+    *err = CeedBasisApply(CeedBasis_dict[*basis], *nelem, *tmode, *emode,
+                                                          ^
+
+/home/jeth8984/libCEED/interface/ceed-fortran.c(467): warning #188: enumerated type mixed with another type
+    *err = CeedBasisApply(CeedBasis_dict[*basis], *nelem, *tmode, *emode,
+                                                                  ^
+
+/home/jeth8984/libCEED/interface/ceed-fortran.c(800): warning #188: enumerated type mixed with another type
+    *err = CeedOperatorSetField(op_, fieldname_c, r_, *lmode, b_, v_);
+                                                      ^
+
+          CC build/interface/ceed-vec.o
+          CC build/interface/ceed.o
+          CC build/interface/ceed-tensor.o
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+          CC build/interface/ceed-qfunction.o
+          CC build/gallery/identity/ceed-identity.o
+          CC build/gallery/poisson3d/ceed-poisson3dapply.o
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+          CC build/gallery/poisson3d/ceed-poisson3dbuild.o
+          CC build/gallery/mass1d/ceed-massapply.o
+          CC build/gallery/mass1d/ceed-mass1dbuild.o
+          CC build/gallery/mass2d/ceed-mass2dbuild.o
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+          CC build/gallery/poisson1d/ceed-poisson1dapply.o
+          CC build/gallery/poisson1d/ceed-poisson1dbuild.o
+          CC build/gallery/mass3d/ceed-mass3dbuild.o
+          CC build/gallery/poisson2d/ceed-poisson2dapply.o
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+          CC build/gallery/poisson2d/ceed-poisson2dbuild.o
+          CC build/backends/ref/ceed-ref-basis.o
+          CC build/backends/ref/ceed-ref-operator.o
+          CC build/backends/ref/ceed-ref-qfunction.o
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+          CC build/backends/ref/ceed-ref-restriction.o
+remark #11074: Inlining inhibited by limit max-size 
+remark #11076: To get full report use -qopt-report=4 -qopt-report-phase ipo
+          CC build/backends/ref/ceed-ref-tensor.o
+          CC build/backends/ref/ceed-ref-vec.o
+          CC build/backends/ref/ceed-ref.o
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+          CC build/backends/blocked/ceed-blocked-operator.o
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+          CC build/backends/blocked/ceed-blocked.o
+          CC build/backends/opt/ceed-opt-blocked.o
+          CC build/backends/opt/ceed-opt-operator.o
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+remark #11074: Inlining inhibited by limit max-size 
+remark #11076: To get full report use -qopt-report=4 -qopt-report-phase ipo
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+          CC build/backends/opt/ceed-opt-serial.o
+          CC build/backends/xsmm/ceed-xsmm-blocked.o
+          CC build/backends/xsmm/ceed-xsmm-serial.o
+remark #11074: Inlining inhibited by limit max-size 
+remark #11076: To get full report use -qopt-report=4 -qopt-report-phase ipo
+          CC build/backends/xsmm/ceed-xsmm-tensor.o
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+/home/jeth8984/libCEED/backends/xsmm/ceed-xsmm-tensor.c(86): warning #188: enumerated type mixed with another type
+      ind = CeedGetXsmmInd_Tensor(nelem, add, tmode==CEED_TRANSPOSE?1:0, B, C,
+                                              ^
+
+/home/jeth8984/libCEED/backends/xsmm/ceed-xsmm-tensor.c(137): warning #188: enumerated type mixed with another type
+                int ind = CeedGetXsmmInd_Tensor(nelem, add, tmode, B, C, J, dim,
+                                                            ^
+
+        LINK lib/libceed.so
+Prove
+make: 'lib' with optional backends: /cpu/self/xsmm/serial /cpu/self/xsmm/blocked /cpu/self/tmpl /cpu/self/tmpl/sub
+          CC build/backends/template/ceed-tmpl-sub.o
+          CC build/backends/template/ceed-tmpl.o
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+        LINK lib/libceed_test.so
+      LINK.c build/t302-basis
+      LINK.F build/t302-basis-f
+icc: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+icc: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+ifort: command line warning #10006: ignoring unknown option '-ffp-contract=fast'
+ifort: command line warning #10006: ignoring unknown option '-fopenmp-simd'
+ifort: command line warning #10157: ignoring option '-W'; argument is of wrong type
+ifort: command line warning #10157: ignoring option '-W'; argument is of wrong type
+ifort: command line warning #10157: ignoring option '-W'; argument is of wrong type
+ifort: command line warning #10157: ignoring option '-W'; argument is of wrong type
+ifort: command line warning #10006: ignoring unknown option '-MP'
+Testing backends: /cpu/self/ref/serial /cpu/self/ref/blocked /cpu/self/opt/serial /cpu/self/opt/blocked /cpu/self/xsmm/serial /cpu/self/xsmm/blocked /cpu/self/tmpl /cpu/self/tmpl/sub
+prove -v --exec 'tests/tap.sh' t302-basis t302-basis-f
+t302-basis .... 
+1..24
+# TESTARGS: {ceed_resource}
+ok 1 t302-basis /cpu/self/ref/serial
+ok 2 t302-basis /cpu/self/ref/serial stdout
+ok 3 t302-basis /cpu/self/ref/serial stderr
+ok 4 t302-basis /cpu/self/ref/blocked
+ok 5 t302-basis /cpu/self/ref/blocked stdout
+ok 6 t302-basis /cpu/self/ref/blocked stderr
+ok 7 t302-basis /cpu/self/opt/serial
+ok 8 t302-basis /cpu/self/opt/serial stdout
+ok 9 t302-basis /cpu/self/opt/serial stderr
+ok 10 t302-basis /cpu/self/opt/blocked
+ok 11 t302-basis /cpu/self/opt/blocked stdout
+ok 12 t302-basis /cpu/self/opt/blocked stderr
+ok 13 t302-basis /cpu/self/xsmm/serial
+ok 14 t302-basis /cpu/self/xsmm/serial stdout
+ok 15 t302-basis /cpu/self/xsmm/serial stderr
+ok 16 t302-basis /cpu/self/xsmm/blocked
+ok 17 t302-basis /cpu/self/xsmm/blocked stdout
+ok 18 t302-basis /cpu/self/xsmm/blocked stderr
+ok 19 t302-basis /cpu/self/tmpl
+ok 20 t302-basis /cpu/self/tmpl stdout
+ok 21 t302-basis /cpu/self/tmpl stderr
+ok 22 t302-basis /cpu/self/tmpl/sub
+ok 23 t302-basis /cpu/self/tmpl/sub stdout
+ok 24 t302-basis /cpu/self/tmpl/sub stderr
+ok
+t302-basis-f .. 
+1..24
+# TESTARGS: {ceed_resource}
+ok 1 t302-basis-f /cpu/self/ref/serial
+not ok 2 t302-basis-f /cpu/self/ref/serial stdout
+# --- tests/output/t302-basis-f.out	2019-09-17 09:15:00.409280558 -0600
+# +++ t302-basis-f.7Zre.out	2019-09-18 14:07:26.426140029 -0600
+# @@ -1,3 +1,17 @@
+# +colograd[0]: -3.00000000  4.04508497 -1.54508497  0.50000000
+# +colograd[1]: -0.80901699  0.00000000  1.11803399 -0.30901699
+# +colograd[2]:  0.30901699 -1.11803399  0.00000000  0.80901699
+# +colograd[3]: -0.50000000  1.54508497 -4.04508497  3.00000000
+# +colograd[0]: -3.33200024  4.86015442 -2.10878235  0.58062817
+# +colograd[1]: -0.75755761 -0.38441439  1.47067023 -0.32869822
+# +colograd[2]:  0.32869822 -1.47067023  0.38441439  0.75755761
+# +colograd[3]: -0.58062817  2.10878235 -4.86015442  3.33200024
+# +colograd[0]: -3.46592188  1.89221184  2.88856261 -0.64549009 -1.79434637  1.12498389
+# +colograd[1]: -1.80001352  0.46288791  1.30407559  0.28647572 -0.39349201  0.14006630
+# +colograd[2]: -0.10371066 -0.80402118 -0.31095294  0.88495577  0.82906498 -0.49533597
+# +colograd[3]:  0.49533597 -0.82906498 -0.88495577  0.31095294  0.80402118  0.10371066
+# +colograd[4]: -0.14006630  0.39349201 -0.28647572 -1.30407559 -0.46288791  1.80001352
+# +colograd[5]: -1.12498389  1.79434637  0.64549009 -2.88856261 -1.89221184  3.46592188
+# CeedBasis: dim=1 P=4 Q=4
+# qref1d:	 -1.00000000	 -0.44721360	  0.44721360	  1.00000000
+# qweight1d:	  0.16666667	  0.83333333	  0.83333333	  0.16666667
+# @@ -9,10 +23,6 @@
+# grad1d[1]:	 -0.80901699	  0.00000000	  1.11803399	 -0.30901699
+# grad1d[2]:	  0.30901699	 -1.11803399	  0.00000000	  0.80901699
+# grad1d[3]:	 -0.50000000	  1.54508497	 -4.04508497	  3.00000000
+# -colograd[0]: -3.00000000  4.04508497 -1.54508497  0.50000000
+# -colograd[1]: -0.80901699  0.00000000  1.11803399 -0.30901699
+# -colograd[2]:  0.30901699 -1.11803399  0.00000000  0.80901699
+# -colograd[3]: -0.50000000  1.54508497 -4.04508497  3.00000000
+# CeedBasis: dim=1 P=4 Q=4
+# qref1d:	 -0.86113631	 -0.33998104	  0.33998104	  0.86113631
+# qweight1d:	  0.34785485	  0.65214515	  0.65214515	  0.34785485
+# @@ -24,10 +34,6 @@
+# grad1d[1]:	 -0.51670214	 -0.48795249	  1.33790510	 -0.33325047
+# grad1d[2]:	  0.33325047	 -1.33790510	  0.48795249	  0.51670214
+# grad1d[3]:	 -0.18899664	  0.63510411	 -2.78794489	  2.34183742
+# -colograd[0]: -3.33200024  4.86015442 -2.10878235  0.58062817
+# -colograd[1]: -0.75755761 -0.38441439  1.47067023 -0.32869822
+# -colograd[2]:  0.32869822 -1.47067023  0.38441439  0.75755761
+# -colograd[3]: -0.58062817  2.10878235 -4.86015442  3.33200024
+# CeedBasis: dim=1 P=4 Q=6
+# qref1d:	 -0.93246951	 -0.66120939	 -0.23861919	  0.23861919	  0.66120939	  0.93246951
+# qweight1d:	  0.17132449	  0.36076157	  0.46791393	  0.46791393	  0.36076157	  0.17132449
+# @@ -43,9 +49,3 @@
+# grad1d[3]:	  0.31651314	 -1.45709197	  0.86054400	  0.28003483
+# grad1d[4]:	  0.13176576	 -0.39104650	 -1.26197697	  1.52125771
+# grad1d[5]:	 -0.33972447	  1.08235766	 -3.41353144	  2.67089826
+# -colograd[0]: -3.46592188  1.89221184  2.88856261 -0.64549009 -1.79434637  1.12498389
+# -colograd[1]: -1.80001352  0.46288791  1.30407559  0.28647572 -0.39349201  0.14006630
+# -colograd[2]: -0.10371066 -0.80402118 -0.31095294  0.88495577  0.82906498 -0.49533597
+# -colograd[3]:  0.49533597 -0.82906498 -0.88495577  0.31095294  0.80402118  0.10371066
+# -colograd[4]: -0.14006630  0.39349201 -0.28647572 -1.30407559 -0.46288791  1.80001352
+# -colograd[5]: -1.12498389  1.79434637  0.64549009 -2.88856261 -1.89221184  3.46592188
+ok 3 t302-basis-f /cpu/self/ref/serial stderr
+ok 4 t302-basis-f /cpu/self/ref/blocked
+not ok 5 t302-basis-f /cpu/self/ref/blocked stdout
+# --- tests/output/t302-basis-f.out	2019-09-17 09:15:00.409280558 -0600
+# +++ t302-basis-f.7Zre.out	2019-09-18 14:07:26.466996073 -0600
+# @@ -1,3 +1,17 @@
+# +colograd[0]: -3.00000000  4.04508497 -1.54508497  0.50000000
+# +colograd[1]: -0.80901699  0.00000000  1.11803399 -0.30901699
+# +colograd[2]:  0.30901699 -1.11803399  0.00000000  0.80901699
+# +colograd[3]: -0.50000000  1.54508497 -4.04508497  3.00000000
+# +colograd[0]: -3.33200024  4.86015442 -2.10878235  0.58062817
+# +colograd[1]: -0.75755761 -0.38441439  1.47067023 -0.32869822
+# +colograd[2]:  0.32869822 -1.47067023  0.38441439  0.75755761
+# +colograd[3]: -0.58062817  2.10878235 -4.86015442  3.33200024
+# +colograd[0]: -3.46592188  1.89221184  2.88856261 -0.64549009 -1.79434637  1.12498389
+# +colograd[1]: -1.80001352  0.46288791  1.30407559  0.28647572 -0.39349201  0.14006630
+# +colograd[2]: -0.10371066 -0.80402118 -0.31095294  0.88495577  0.82906498 -0.49533597
+# +colograd[3]:  0.49533597 -0.82906498 -0.88495577  0.31095294  0.80402118  0.10371066
+# +colograd[4]: -0.14006630  0.39349201 -0.28647572 -1.30407559 -0.46288791  1.80001352
+# +colograd[5]: -1.12498389  1.79434637  0.64549009 -2.88856261 -1.89221184  3.46592188
+# CeedBasis: dim=1 P=4 Q=4
+# qref1d:	 -1.00000000	 -0.44721360	  0.44721360	  1.00000000
+# qweight1d:	  0.16666667	  0.83333333	  0.83333333	  0.16666667
+# @@ -9,10 +23,6 @@
+# grad1d[1]:	 -0.80901699	  0.00000000	  1.11803399	 -0.30901699
+# grad1d[2]:	  0.30901699	 -1.11803399	  0.00000000	  0.80901699
+# grad1d[3]:	 -0.50000000	  1.54508497	 -4.04508497	  3.00000000
+# -colograd[0]: -3.00000000  4.04508497 -1.54508497  0.50000000
+# -colograd[1]: -0.80901699  0.00000000  1.11803399 -0.30901699
+# -colograd[2]:  0.30901699 -1.11803399  0.00000000  0.80901699
+# -colograd[3]: -0.50000000  1.54508497 -4.04508497  3.00000000
+# CeedBasis: dim=1 P=4 Q=4
+# qref1d:	 -0.86113631	 -0.33998104	  0.33998104	  0.86113631
+# qweight1d:	  0.34785485	  0.65214515	  0.65214515	  0.34785485
+# @@ -24,10 +34,6 @@
+# grad1d[1]:	 -0.51670214	 -0.48795249	  1.33790510	 -0.33325047
+# grad1d[2]:	  0.33325047	 -1.33790510	  0.48795249	  0.51670214
+# grad1d[3]:	 -0.18899664	  0.63510411	 -2.78794489	  2.34183742
+# -colograd[0]: -3.33200024  4.86015442 -2.10878235  0.58062817
+# -colograd[1]: -0.75755761 -0.38441439  1.47067023 -0.32869822
+# -colograd[2]:  0.32869822 -1.47067023  0.38441439  0.75755761
+# -colograd[3]: -0.58062817  2.10878235 -4.86015442  3.33200024
+# CeedBasis: dim=1 P=4 Q=6
+# qref1d:	 -0.93246951	 -0.66120939	 -0.23861919	  0.23861919	  0.66120939	  0.93246951
+# qweight1d:	  0.17132449	  0.36076157	  0.46791393	  0.46791393	  0.36076157	  0.17132449
+# @@ -43,9 +49,3 @@
+# grad1d[3]:	  0.31651314	 -1.45709197	  0.86054400	  0.28003483
+# grad1d[4]:	  0.13176576	 -0.39104650	 -1.26197697	  1.52125771
+# grad1d[5]:	 -0.33972447	  1.08235766	 -3.41353144	  2.67089826
+# -colograd[0]: -3.46592188  1.89221184  2.88856261 -0.64549009 -1.79434637  1.12498389
+# -colograd[1]: -1.80001352  0.46288791  1.30407559  0.28647572 -0.39349201  0.14006630
+# -colograd[2]: -0.10371066 -0.80402118 -0.31095294  0.88495577  0.82906498 -0.49533597
+# -colograd[3]:  0.49533597 -0.82906498 -0.88495577  0.31095294  0.80402118  0.10371066
+# -colograd[4]: -0.14006630  0.39349201 -0.28647572 -1.30407559 -0.46288791  1.80001352
+# -colograd[5]: -1.12498389  1.79434637  0.64549009 -2.88856261 -1.89221184  3.46592188
+ok 6 t302-basis-f /cpu/self/ref/blocked stderr
+ok 7 t302-basis-f /cpu/self/opt/serial
+not ok 8 t302-basis-f /cpu/self/opt/serial stdout
+# --- tests/output/t302-basis-f.out	2019-09-17 09:15:00.409280558 -0600
+# +++ t302-basis-f.7Zre.out	2019-09-18 14:07:26.506301375 -0600
+# @@ -1,3 +1,17 @@
+# +colograd[0]: -3.00000000  4.04508497 -1.54508497  0.50000000
+# +colograd[1]: -0.80901699  0.00000000  1.11803399 -0.30901699
+# +colograd[2]:  0.30901699 -1.11803399  0.00000000  0.80901699
+# +colograd[3]: -0.50000000  1.54508497 -4.04508497  3.00000000
+# +colograd[0]: -3.33200024  4.86015442 -2.10878235  0.58062817
+# +colograd[1]: -0.75755761 -0.38441439  1.47067023 -0.32869822
+# +colograd[2]:  0.32869822 -1.47067023  0.38441439  0.75755761
+# +colograd[3]: -0.58062817  2.10878235 -4.86015442  3.33200024
+# +colograd[0]: -3.46592188  1.89221184  2.88856261 -0.64549009 -1.79434637  1.12498389
+# +colograd[1]: -1.80001352  0.46288791  1.30407559  0.28647572 -0.39349201  0.14006630
+# +colograd[2]: -0.10371066 -0.80402118 -0.31095294  0.88495577  0.82906498 -0.49533597
+# +colograd[3]:  0.49533597 -0.82906498 -0.88495577  0.31095294  0.80402118  0.10371066
+# +colograd[4]: -0.14006630  0.39349201 -0.28647572 -1.30407559 -0.46288791  1.80001352
+# +colograd[5]: -1.12498389  1.79434637  0.64549009 -2.88856261 -1.89221184  3.46592188
+# CeedBasis: dim=1 P=4 Q=4
+# qref1d:	 -1.00000000	 -0.44721360	  0.44721360	  1.00000000
+# qweight1d:	  0.16666667	  0.83333333	  0.83333333	  0.16666667
+# @@ -9,10 +23,6 @@
+# grad1d[1]:	 -0.80901699	  0.00000000	  1.11803399	 -0.30901699
+# grad1d[2]:	  0.30901699	 -1.11803399	  0.00000000	  0.80901699
+# grad1d[3]:	 -0.50000000	  1.54508497	 -4.04508497	  3.00000000
+# -colograd[0]: -3.00000000  4.04508497 -1.54508497  0.50000000
+# -colograd[1]: -0.80901699  0.00000000  1.11803399 -0.30901699
+# -colograd[2]:  0.30901699 -1.11803399  0.00000000  0.80901699
+# -colograd[3]: -0.50000000  1.54508497 -4.04508497  3.00000000
+# CeedBasis: dim=1 P=4 Q=4
+# qref1d:	 -0.86113631	 -0.33998104	  0.33998104	  0.86113631
+# qweight1d:	  0.34785485	  0.65214515	  0.65214515	  0.34785485
+# @@ -24,10 +34,6 @@
+# grad1d[1]:	 -0.51670214	 -0.48795249	  1.33790510	 -0.33325047
+# grad1d[2]:	  0.33325047	 -1.33790510	  0.48795249	  0.51670214
+# grad1d[3]:	 -0.18899664	  0.63510411	 -2.78794489	  2.34183742
+# -colograd[0]: -3.33200024  4.86015442 -2.10878235  0.58062817
+# -colograd[1]: -0.75755761 -0.38441439  1.47067023 -0.32869822
+# -colograd[2]:  0.32869822 -1.47067023  0.38441439  0.75755761
+# -colograd[3]: -0.58062817  2.10878235 -4.86015442  3.33200024
+# CeedBasis: dim=1 P=4 Q=6
+# qref1d:	 -0.93246951	 -0.66120939	 -0.23861919	  0.23861919	  0.66120939	  0.93246951
+# qweight1d:	  0.17132449	  0.36076157	  0.46791393	  0.46791393	  0.36076157	  0.17132449
+# @@ -43,9 +49,3 @@
+# grad1d[3]:	  0.31651314	 -1.45709197	  0.86054400	  0.28003483
+# grad1d[4]:	  0.13176576	 -0.39104650	 -1.26197697	  1.52125771
+# grad1d[5]:	 -0.33972447	  1.08235766	 -3.41353144	  2.67089826
+# -colograd[0]: -3.46592188  1.89221184  2.88856261 -0.64549009 -1.79434637  1.12498389
+# -colograd[1]: -1.80001352  0.46288791  1.30407559  0.28647572 -0.39349201  0.14006630
+# -colograd[2]: -0.10371066 -0.80402118 -0.31095294  0.88495577  0.82906498 -0.49533597
+# -colograd[3]:  0.49533597 -0.82906498 -0.88495577  0.31095294  0.80402118  0.10371066
+# -colograd[4]: -0.14006630  0.39349201 -0.28647572 -1.30407559 -0.46288791  1.80001352
+# -colograd[5]: -1.12498389  1.79434637  0.64549009 -2.88856261 -1.89221184  3.46592188
+ok 9 t302-basis-f /cpu/self/opt/serial stderr
+ok 10 t302-basis-f /cpu/self/opt/blocked
+not ok 11 t302-basis-f /cpu/self/opt/blocked stdout
+# --- tests/output/t302-basis-f.out	2019-09-17 09:15:00.409280558 -0600
+# +++ t302-basis-f.7Zre.out	2019-09-18 14:07:26.545847740 -0600
+# @@ -1,3 +1,17 @@
+# +colograd[0]: -3.00000000  4.04508497 -1.54508497  0.50000000
+# +colograd[1]: -0.80901699  0.00000000  1.11803399 -0.30901699
+# +colograd[2]:  0.30901699 -1.11803399  0.00000000  0.80901699
+# +colograd[3]: -0.50000000  1.54508497 -4.04508497  3.00000000
+# +colograd[0]: -3.33200024  4.86015442 -2.10878235  0.58062817
+# +colograd[1]: -0.75755761 -0.38441439  1.47067023 -0.32869822
+# +colograd[2]:  0.32869822 -1.47067023  0.38441439  0.75755761
+# +colograd[3]: -0.58062817  2.10878235 -4.86015442  3.33200024
+# +colograd[0]: -3.46592188  1.89221184  2.88856261 -0.64549009 -1.79434637  1.12498389
+# +colograd[1]: -1.80001352  0.46288791  1.30407559  0.28647572 -0.39349201  0.14006630
+# +colograd[2]: -0.10371066 -0.80402118 -0.31095294  0.88495577  0.82906498 -0.49533597
+# +colograd[3]:  0.49533597 -0.82906498 -0.88495577  0.31095294  0.80402118  0.10371066
+# +colograd[4]: -0.14006630  0.39349201 -0.28647572 -1.30407559 -0.46288791  1.80001352
+# +colograd[5]: -1.12498389  1.79434637  0.64549009 -2.88856261 -1.89221184  3.46592188
+# CeedBasis: dim=1 P=4 Q=4
+# qref1d:	 -1.00000000	 -0.44721360	  0.44721360	  1.00000000
+# qweight1d:	  0.16666667	  0.83333333	  0.83333333	  0.16666667
+# @@ -9,10 +23,6 @@
+# grad1d[1]:	 -0.80901699	  0.00000000	  1.11803399	 -0.30901699
+# grad1d[2]:	  0.30901699	 -1.11803399	  0.00000000	  0.80901699
+# grad1d[3]:	 -0.50000000	  1.54508497	 -4.04508497	  3.00000000
+# -colograd[0]: -3.00000000  4.04508497 -1.54508497  0.50000000
+# -colograd[1]: -0.80901699  0.00000000  1.11803399 -0.30901699
+# -colograd[2]:  0.30901699 -1.11803399  0.00000000  0.80901699
+# -colograd[3]: -0.50000000  1.54508497 -4.04508497  3.00000000
+# CeedBasis: dim=1 P=4 Q=4
+# qref1d:	 -0.86113631	 -0.33998104	  0.33998104	  0.86113631
+# qweight1d:	  0.34785485	  0.65214515	  0.65214515	  0.34785485
+# @@ -24,10 +34,6 @@
+# grad1d[1]:	 -0.51670214	 -0.48795249	  1.33790510	 -0.33325047
+# grad1d[2]:	  0.33325047	 -1.33790510	  0.48795249	  0.51670214
+# grad1d[3]:	 -0.18899664	  0.63510411	 -2.78794489	  2.34183742
+# -colograd[0]: -3.33200024  4.86015442 -2.10878235  0.58062817
+# -colograd[1]: -0.75755761 -0.38441439  1.47067023 -0.32869822
+# -colograd[2]:  0.32869822 -1.47067023  0.38441439  0.75755761
+# -colograd[3]: -0.58062817  2.10878235 -4.86015442  3.33200024
+# CeedBasis: dim=1 P=4 Q=6
+# qref1d:	 -0.93246951	 -0.66120939	 -0.23861919	  0.23861919	  0.66120939	  0.93246951
+# qweight1d:	  0.17132449	  0.36076157	  0.46791393	  0.46791393	  0.36076157	  0.17132449
+# @@ -43,9 +49,3 @@
+# grad1d[3]:	  0.31651314	 -1.45709197	  0.86054400	  0.28003483
+# grad1d[4]:	  0.13176576	 -0.39104650	 -1.26197697	  1.52125771
+# grad1d[5]:	 -0.33972447	  1.08235766	 -3.41353144	  2.67089826
+# -colograd[0]: -3.46592188  1.89221184  2.88856261 -0.64549009 -1.79434637  1.12498389
+# -colograd[1]: -1.80001352  0.46288791  1.30407559  0.28647572 -0.39349201  0.14006630
+# -colograd[2]: -0.10371066 -0.80402118 -0.31095294  0.88495577  0.82906498 -0.49533597
+# -colograd[3]:  0.49533597 -0.82906498 -0.88495577  0.31095294  0.80402118  0.10371066
+# -colograd[4]: -0.14006630  0.39349201 -0.28647572 -1.30407559 -0.46288791  1.80001352
+# -colograd[5]: -1.12498389  1.79434637  0.64549009 -2.88856261 -1.89221184  3.46592188
+ok 12 t302-basis-f /cpu/self/opt/blocked stderr
+ok 13 t302-basis-f /cpu/self/xsmm/serial
+not ok 14 t302-basis-f /cpu/self/xsmm/serial stdout
+# --- tests/output/t302-basis-f.out	2019-09-17 09:15:00.409280558 -0600
+# +++ t302-basis-f.7Zre.out	2019-09-18 14:07:26.584938326 -0600
+# @@ -1,3 +1,17 @@
+# +colograd[0]: -3.00000000  4.04508497 -1.54508497  0.50000000
+# +colograd[1]: -0.80901699  0.00000000  1.11803399 -0.30901699
+# +colograd[2]:  0.30901699 -1.11803399  0.00000000  0.80901699
+# +colograd[3]: -0.50000000  1.54508497 -4.04508497  3.00000000
+# +colograd[0]: -3.33200024  4.86015442 -2.10878235  0.58062817
+# +colograd[1]: -0.75755761 -0.38441439  1.47067023 -0.32869822
+# +colograd[2]:  0.32869822 -1.47067023  0.38441439  0.75755761
+# +colograd[3]: -0.58062817  2.10878235 -4.86015442  3.33200024
+# +colograd[0]: -3.46592188  1.89221184  2.88856261 -0.64549009 -1.79434637  1.12498389
+# +colograd[1]: -1.80001352  0.46288791  1.30407559  0.28647572 -0.39349201  0.14006630
+# +colograd[2]: -0.10371066 -0.80402118 -0.31095294  0.88495577  0.82906498 -0.49533597
+# +colograd[3]:  0.49533597 -0.82906498 -0.88495577  0.31095294  0.80402118  0.10371066
+# +colograd[4]: -0.14006630  0.39349201 -0.28647572 -1.30407559 -0.46288791  1.80001352
+# +colograd[5]: -1.12498389  1.79434637  0.64549009 -2.88856261 -1.89221184  3.46592188
+# CeedBasis: dim=1 P=4 Q=4
+# qref1d:	 -1.00000000	 -0.44721360	  0.44721360	  1.00000000
+# qweight1d:	  0.16666667	  0.83333333	  0.83333333	  0.16666667
+# @@ -9,10 +23,6 @@
+# grad1d[1]:	 -0.80901699	  0.00000000	  1.11803399	 -0.30901699
+# grad1d[2]:	  0.30901699	 -1.11803399	  0.00000000	  0.80901699
+# grad1d[3]:	 -0.50000000	  1.54508497	 -4.04508497	  3.00000000
+# -colograd[0]: -3.00000000  4.04508497 -1.54508497  0.50000000
+# -colograd[1]: -0.80901699  0.00000000  1.11803399 -0.30901699
+# -colograd[2]:  0.30901699 -1.11803399  0.00000000  0.80901699
+# -colograd[3]: -0.50000000  1.54508497 -4.04508497  3.00000000
+# CeedBasis: dim=1 P=4 Q=4
+# qref1d:	 -0.86113631	 -0.33998104	  0.33998104	  0.86113631
+# qweight1d:	  0.34785485	  0.65214515	  0.65214515	  0.34785485
+# @@ -24,10 +34,6 @@
+# grad1d[1]:	 -0.51670214	 -0.48795249	  1.33790510	 -0.33325047
+# grad1d[2]:	  0.33325047	 -1.33790510	  0.48795249	  0.51670214
+# grad1d[3]:	 -0.18899664	  0.63510411	 -2.78794489	  2.34183742
+# -colograd[0]: -3.33200024  4.86015442 -2.10878235  0.58062817
+# -colograd[1]: -0.75755761 -0.38441439  1.47067023 -0.32869822
+# -colograd[2]:  0.32869822 -1.47067023  0.38441439  0.75755761
+# -colograd[3]: -0.58062817  2.10878235 -4.86015442  3.33200024
+# CeedBasis: dim=1 P=4 Q=6
+# qref1d:	 -0.93246951	 -0.66120939	 -0.23861919	  0.23861919	  0.66120939	  0.93246951
+# qweight1d:	  0.17132449	  0.36076157	  0.46791393	  0.46791393	  0.36076157	  0.17132449
+# @@ -43,9 +49,3 @@
+# grad1d[3]:	  0.31651314	 -1.45709197	  0.86054400	  0.28003483
+# grad1d[4]:	  0.13176576	 -0.39104650	 -1.26197697	  1.52125771
+# grad1d[5]:	 -0.33972447	  1.08235766	 -3.41353144	  2.67089826
+# -colograd[0]: -3.46592188  1.89221184  2.88856261 -0.64549009 -1.79434637  1.12498389
+# -colograd[1]: -1.80001352  0.46288791  1.30407559  0.28647572 -0.39349201  0.14006630
+# -colograd[2]: -0.10371066 -0.80402118 -0.31095294  0.88495577  0.82906498 -0.49533597
+# -colograd[3]:  0.49533597 -0.82906498 -0.88495577  0.31095294  0.80402118  0.10371066
+# -colograd[4]: -0.14006630  0.39349201 -0.28647572 -1.30407559 -0.46288791  1.80001352
+# -colograd[5]: -1.12498389  1.79434637  0.64549009 -2.88856261 -1.89221184  3.46592188
+ok 15 t302-basis-f /cpu/self/xsmm/serial stderr
+ok 16 t302-basis-f /cpu/self/xsmm/blocked
+not ok 17 t302-basis-f /cpu/self/xsmm/blocked stdout
+# --- tests/output/t302-basis-f.out	2019-09-17 09:15:00.409280558 -0600
+# +++ t302-basis-f.7Zre.out	2019-09-18 14:07:26.622620382 -0600
+# @@ -1,3 +1,17 @@
+# +colograd[0]: -3.00000000  4.04508497 -1.54508497  0.50000000
+# +colograd[1]: -0.80901699  0.00000000  1.11803399 -0.30901699
+# +colograd[2]:  0.30901699 -1.11803399  0.00000000  0.80901699
+# +colograd[3]: -0.50000000  1.54508497 -4.04508497  3.00000000
+# +colograd[0]: -3.33200024  4.86015442 -2.10878235  0.58062817
+# +colograd[1]: -0.75755761 -0.38441439  1.47067023 -0.32869822
+# +colograd[2]:  0.32869822 -1.47067023  0.38441439  0.75755761
+# +colograd[3]: -0.58062817  2.10878235 -4.86015442  3.33200024
+# +colograd[0]: -3.46592188  1.89221184  2.88856261 -0.64549009 -1.79434637  1.12498389
+# +colograd[1]: -1.80001352  0.46288791  1.30407559  0.28647572 -0.39349201  0.14006630
+# +colograd[2]: -0.10371066 -0.80402118 -0.31095294  0.88495577  0.82906498 -0.49533597
+# +colograd[3]:  0.49533597 -0.82906498 -0.88495577  0.31095294  0.80402118  0.10371066
+# +colograd[4]: -0.14006630  0.39349201 -0.28647572 -1.30407559 -0.46288791  1.80001352
+# +colograd[5]: -1.12498389  1.79434637  0.64549009 -2.88856261 -1.89221184  3.46592188
+# CeedBasis: dim=1 P=4 Q=4
+# qref1d:	 -1.00000000	 -0.44721360	  0.44721360	  1.00000000
+# qweight1d:	  0.16666667	  0.83333333	  0.83333333	  0.16666667
+# @@ -9,10 +23,6 @@
+# grad1d[1]:	 -0.80901699	  0.00000000	  1.11803399	 -0.30901699
+# grad1d[2]:	  0.30901699	 -1.11803399	  0.00000000	  0.80901699
+# grad1d[3]:	 -0.50000000	  1.54508497	 -4.04508497	  3.00000000
+# -colograd[0]: -3.00000000  4.04508497 -1.54508497  0.50000000
+# -colograd[1]: -0.80901699  0.00000000  1.11803399 -0.30901699
+# -colograd[2]:  0.30901699 -1.11803399  0.00000000  0.80901699
+# -colograd[3]: -0.50000000  1.54508497 -4.04508497  3.00000000
+# CeedBasis: dim=1 P=4 Q=4
+# qref1d:	 -0.86113631	 -0.33998104	  0.33998104	  0.86113631
+# qweight1d:	  0.34785485	  0.65214515	  0.65214515	  0.34785485
+# @@ -24,10 +34,6 @@
+# grad1d[1]:	 -0.51670214	 -0.48795249	  1.33790510	 -0.33325047
+# grad1d[2]:	  0.33325047	 -1.33790510	  0.48795249	  0.51670214
+# grad1d[3]:	 -0.18899664	  0.63510411	 -2.78794489	  2.34183742
+# -colograd[0]: -3.33200024  4.86015442 -2.10878235  0.58062817
+# -colograd[1]: -0.75755761 -0.38441439  1.47067023 -0.32869822
+# -colograd[2]:  0.32869822 -1.47067023  0.38441439  0.75755761
+# -colograd[3]: -0.58062817  2.10878235 -4.86015442  3.33200024
+# CeedBasis: dim=1 P=4 Q=6
+# qref1d:	 -0.93246951	 -0.66120939	 -0.23861919	  0.23861919	  0.66120939	  0.93246951
+# qweight1d:	  0.17132449	  0.36076157	  0.46791393	  0.46791393	  0.36076157	  0.17132449
+# @@ -43,9 +49,3 @@
+# grad1d[3]:	  0.31651314	 -1.45709197	  0.86054400	  0.28003483
+# grad1d[4]:	  0.13176576	 -0.39104650	 -1.26197697	  1.52125771
+# grad1d[5]:	 -0.33972447	  1.08235766	 -3.41353144	  2.67089826
+# -colograd[0]: -3.46592188  1.89221184  2.88856261 -0.64549009 -1.79434637  1.12498389
+# -colograd[1]: -1.80001352  0.46288791  1.30407559  0.28647572 -0.39349201  0.14006630
+# -colograd[2]: -0.10371066 -0.80402118 -0.31095294  0.88495577  0.82906498 -0.49533597
+# -colograd[3]:  0.49533597 -0.82906498 -0.88495577  0.31095294  0.80402118  0.10371066
+# -colograd[4]: -0.14006630  0.39349201 -0.28647572 -1.30407559 -0.46288791  1.80001352
+# -colograd[5]: -1.12498389  1.79434637  0.64549009 -2.88856261 -1.89221184  3.46592188
+ok 18 t302-basis-f /cpu/self/xsmm/blocked stderr
+ok 19 t302-basis-f /cpu/self/tmpl
+not ok 20 t302-basis-f /cpu/self/tmpl stdout
+# --- tests/output/t302-basis-f.out	2019-09-17 09:15:00.409280558 -0600
+# +++ t302-basis-f.7Zre.out	2019-09-18 14:07:26.660878241 -0600
+# @@ -1,3 +1,17 @@
+# +colograd[0]: -3.00000000  4.04508497 -1.54508497  0.50000000
+# +colograd[1]: -0.80901699  0.00000000  1.11803399 -0.30901699
+# +colograd[2]:  0.30901699 -1.11803399  0.00000000  0.80901699
+# +colograd[3]: -0.50000000  1.54508497 -4.04508497  3.00000000
+# +colograd[0]: -3.33200024  4.86015442 -2.10878235  0.58062817
+# +colograd[1]: -0.75755761 -0.38441439  1.47067023 -0.32869822
+# +colograd[2]:  0.32869822 -1.47067023  0.38441439  0.75755761
+# +colograd[3]: -0.58062817  2.10878235 -4.86015442  3.33200024
+# +colograd[0]: -3.46592188  1.89221184  2.88856261 -0.64549009 -1.79434637  1.12498389
+# +colograd[1]: -1.80001352  0.46288791  1.30407559  0.28647572 -0.39349201  0.14006630
+# +colograd[2]: -0.10371066 -0.80402118 -0.31095294  0.88495577  0.82906498 -0.49533597
+# +colograd[3]:  0.49533597 -0.82906498 -0.88495577  0.31095294  0.80402118  0.10371066
+# +colograd[4]: -0.14006630  0.39349201 -0.28647572 -1.30407559 -0.46288791  1.80001352
+# +colograd[5]: -1.12498389  1.79434637  0.64549009 -2.88856261 -1.89221184  3.46592188
+# CeedBasis: dim=1 P=4 Q=4
+# qref1d:	 -1.00000000	 -0.44721360	  0.44721360	  1.00000000
+# qweight1d:	  0.16666667	  0.83333333	  0.83333333	  0.16666667
+# @@ -9,10 +23,6 @@
+# grad1d[1]:	 -0.80901699	  0.00000000	  1.11803399	 -0.30901699
+# grad1d[2]:	  0.30901699	 -1.11803399	  0.00000000	  0.80901699
+# grad1d[3]:	 -0.50000000	  1.54508497	 -4.04508497	  3.00000000
+# -colograd[0]: -3.00000000  4.04508497 -1.54508497  0.50000000
+# -colograd[1]: -0.80901699  0.00000000  1.11803399 -0.30901699
+# -colograd[2]:  0.30901699 -1.11803399  0.00000000  0.80901699
+# -colograd[3]: -0.50000000  1.54508497 -4.04508497  3.00000000
+# CeedBasis: dim=1 P=4 Q=4
+# qref1d:	 -0.86113631	 -0.33998104	  0.33998104	  0.86113631
+# qweight1d:	  0.34785485	  0.65214515	  0.65214515	  0.34785485
+# @@ -24,10 +34,6 @@
+# grad1d[1]:	 -0.51670214	 -0.48795249	  1.33790510	 -0.33325047
+# grad1d[2]:	  0.33325047	 -1.33790510	  0.48795249	  0.51670214
+# grad1d[3]:	 -0.18899664	  0.63510411	 -2.78794489	  2.34183742
+# -colograd[0]: -3.33200024  4.86015442 -2.10878235  0.58062817
+# -colograd[1]: -0.75755761 -0.38441439  1.47067023 -0.32869822
+# -colograd[2]:  0.32869822 -1.47067023  0.38441439  0.75755761
+# -colograd[3]: -0.58062817  2.10878235 -4.86015442  3.33200024
+# CeedBasis: dim=1 P=4 Q=6
+# qref1d:	 -0.93246951	 -0.66120939	 -0.23861919	  0.23861919	  0.66120939	  0.93246951
+# qweight1d:	  0.17132449	  0.36076157	  0.46791393	  0.46791393	  0.36076157	  0.17132449
+# @@ -43,9 +49,3 @@
+# grad1d[3]:	  0.31651314	 -1.45709197	  0.86054400	  0.28003483
+# grad1d[4]:	  0.13176576	 -0.39104650	 -1.26197697	  1.52125771
+# grad1d[5]:	 -0.33972447	  1.08235766	 -3.41353144	  2.67089826
+# -colograd[0]: -3.46592188  1.89221184  2.88856261 -0.64549009 -1.79434637  1.12498389
+# -colograd[1]: -1.80001352  0.46288791  1.30407559  0.28647572 -0.39349201  0.14006630
+# -colograd[2]: -0.10371066 -0.80402118 -0.31095294  0.88495577  0.82906498 -0.49533597
+# -colograd[3]:  0.49533597 -0.82906498 -0.88495577  0.31095294  0.80402118  0.10371066
+# -colograd[4]: -0.14006630  0.39349201 -0.28647572 -1.30407559 -0.46288791  1.80001352
+# -colograd[5]: -1.12498389  1.79434637  0.64549009 -2.88856261 -1.89221184  3.46592188
+ok 21 t302-basis-f /cpu/self/tmpl stderr
+ok 22 t302-basis-f /cpu/self/tmpl/sub
+not ok 23 t302-basis-f /cpu/self/tmpl/sub stdout
+# --- tests/output/t302-basis-f.out	2019-09-17 09:15:00.409280558 -0600
+# +++ t302-basis-f.7Zre.out	2019-09-18 14:07:26.698125882 -0600
+# @@ -1,3 +1,17 @@
+# +colograd[0]: -3.00000000  4.04508497 -1.54508497  0.50000000
+# +colograd[1]: -0.80901699  0.00000000  1.11803399 -0.30901699
+# +colograd[2]:  0.30901699 -1.11803399  0.00000000  0.80901699
+# +colograd[3]: -0.50000000  1.54508497 -4.04508497  3.00000000
+# +colograd[0]: -3.33200024  4.86015442 -2.10878235  0.58062817
+# +colograd[1]: -0.75755761 -0.38441439  1.47067023 -0.32869822
+# +colograd[2]:  0.32869822 -1.47067023  0.38441439  0.75755761
+# +colograd[3]: -0.58062817  2.10878235 -4.86015442  3.33200024
+# +colograd[0]: -3.46592188  1.89221184  2.88856261 -0.64549009 -1.79434637  1.12498389
+# +colograd[1]: -1.80001352  0.46288791  1.30407559  0.28647572 -0.39349201  0.14006630
+# +colograd[2]: -0.10371066 -0.80402118 -0.31095294  0.88495577  0.82906498 -0.49533597
+# +colograd[3]:  0.49533597 -0.82906498 -0.88495577  0.31095294  0.80402118  0.10371066
+# +colograd[4]: -0.14006630  0.39349201 -0.28647572 -1.30407559 -0.46288791  1.80001352
+# +colograd[5]: -1.12498389  1.79434637  0.64549009 -2.88856261 -1.89221184  3.46592188
+# CeedBasis: dim=1 P=4 Q=4
+# qref1d:	 -1.00000000	 -0.44721360	  0.44721360	  1.00000000
+# qweight1d:	  0.16666667	  0.83333333	  0.83333333	  0.16666667
+# @@ -9,10 +23,6 @@
+# grad1d[1]:	 -0.80901699	  0.00000000	  1.11803399	 -0.30901699
+# grad1d[2]:	  0.30901699	 -1.11803399	  0.00000000	  0.80901699
+# grad1d[3]:	 -0.50000000	  1.54508497	 -4.04508497	  3.00000000
+# -colograd[0]: -3.00000000  4.04508497 -1.54508497  0.50000000
+# -colograd[1]: -0.80901699  0.00000000  1.11803399 -0.30901699
+# -colograd[2]:  0.30901699 -1.11803399  0.00000000  0.80901699
+# -colograd[3]: -0.50000000  1.54508497 -4.04508497  3.00000000
+# CeedBasis: dim=1 P=4 Q=4
+# qref1d:	 -0.86113631	 -0.33998104	  0.33998104	  0.86113631
+# qweight1d:	  0.34785485	  0.65214515	  0.65214515	  0.34785485
+# @@ -24,10 +34,6 @@
+# grad1d[1]:	 -0.51670214	 -0.48795249	  1.33790510	 -0.33325047
+# grad1d[2]:	  0.33325047	 -1.33790510	  0.48795249	  0.51670214
+# grad1d[3]:	 -0.18899664	  0.63510411	 -2.78794489	  2.34183742
+# -colograd[0]: -3.33200024  4.86015442 -2.10878235  0.58062817
+# -colograd[1]: -0.75755761 -0.38441439  1.47067023 -0.32869822
+# -colograd[2]:  0.32869822 -1.47067023  0.38441439  0.75755761
+# -colograd[3]: -0.58062817  2.10878235 -4.86015442  3.33200024
+# CeedBasis: dim=1 P=4 Q=6
+# qref1d:	 -0.93246951	 -0.66120939	 -0.23861919	  0.23861919	  0.66120939	  0.93246951
+# qweight1d:	  0.17132449	  0.36076157	  0.46791393	  0.46791393	  0.36076157	  0.17132449
+# @@ -43,9 +49,3 @@
+# grad1d[3]:	  0.31651314	 -1.45709197	  0.86054400	  0.28003483
+# grad1d[4]:	  0.13176576	 -0.39104650	 -1.26197697	  1.52125771
+# grad1d[5]:	 -0.33972447	  1.08235766	 -3.41353144	  2.67089826
+# -colograd[0]: -3.46592188  1.89221184  2.88856261 -0.64549009 -1.79434637  1.12498389
+# -colograd[1]: -1.80001352  0.46288791  1.30407559  0.28647572 -0.39349201  0.14006630
+# -colograd[2]: -0.10371066 -0.80402118 -0.31095294  0.88495577  0.82906498 -0.49533597
+# -colograd[3]:  0.49533597 -0.82906498 -0.88495577  0.31095294  0.80402118  0.10371066
+# -colograd[4]: -0.14006630  0.39349201 -0.28647572 -1.30407559 -0.46288791  1.80001352
+# -colograd[5]: -1.12498389  1.79434637  0.64549009 -2.88856261 -1.89221184  3.46592188
+ok 24 t302-basis-f /cpu/self/tmpl/sub stderr
+Failed 8/24 subtests 
+
+Test Summary Report
+-------------------
+t302-basis-f (Wstat: 0 Tests: 24 Failed: 8)
+  Failed tests:  2, 5, 8, 11, 14, 17, 20, 23
+Files=2, Tests=48,  0 wallclock secs ( 0.03 usr  0.00 sys +  0.10 cusr  0.21 csys =  0.34 CPU)
+Result: FAIL
+make: *** [prove] Error 1
+Done
